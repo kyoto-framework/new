@@ -1,0 +1,24 @@
+{{- /*gotype: start.local.PIndexState*/ -}}
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kyoto Project</title>
+    <link rel="stylesheet" href="/static/css/tailwind.min.css">
+    <link rel="stylesheet" href="/static/css/bundle.min.css">
+</head>
+<body>
+    <div class="h-screen w-screen flex flex-col items-center justify-center gap-8">
+        <img src="/static/img/logo.svg" alt="logo" class="h-64">
+        <div class="text-xl font-mono">Kyoto Start Project</div>
+        <div class="max-w-lg text-center font-mono">
+            {{ template "CExample" await .Example }}
+        </div>
+    </div>
+    {{ client }}
+    <script src="/static/js/bundle.min.js"></script>
+</body>
+</html>
