@@ -4,6 +4,8 @@ git.sr.ht/~kyoto-framework/kyoto v1.0.14-0.20221013060913-0da63065a47f h1:FyGuPD
 git.sr.ht/~kyoto-framework/kyoto v1.0.14-0.20221013060913-0da63065a47f/go.mod h1:X80QH55IJGUkGd12JErpMhRUEaNXsGDXtGGRFNidgXU=
 git.sr.ht/~kyoto-framework/kyoto v1.0.14 h1:ht21G1tmPoNWqU23KJj7WzTMOlj6bvNyVao9D6ftJVo=
 git.sr.ht/~kyoto-framework/kyoto v1.0.14/go.mod h1:u4gnssIO3cOoQzFDm1clr38ojySaKGT+FFt4CMksbEo=
+git.sr.ht/~kyoto-framework/kyoto v1.1.0 h1:fY1L8LsfCAxkLD7hfgtZt469TgBl9DcBtL11Qmk5cgc=
+git.sr.ht/~kyoto-framework/kyoto v1.1.0/go.mod h1:u4gnssIO3cOoQzFDm1clr38ojySaKGT+FFt4CMksbEo=
 git.sr.ht/~kyoto-framework/zen v0.0.0-20220927111325-dce9296a4a24 h1:Fy/Gld0g7WLOEHwqXvHqXXLL8ik3rkdw6bXhlua7kkE=
 git.sr.ht/~kyoto-framework/zen v0.0.0-20220927111325-dce9296a4a24/go.mod h1:0pzRG06CbkgMrrAa3+UnY8/aJCej9IC8j23ly9E25nk=
 git.sr.ht/~kyoto-framework/zen v0.0.0-20221013060022-4762e1a72cb8 h1:uOg2N48fGZCw18BLLcK2NjoxU641hYp0TIeghNK4Bu8=

@@ -3,7 +3,7 @@ module start.local
 go 1.19
 
 require (
-	git.sr.ht/~kyoto-framework/kyoto v1.0.14
+	git.sr.ht/~kyoto-framework/kyoto v1.1.0
 	git.sr.ht/~kyoto-framework/zen v1.0.0
 )
 
