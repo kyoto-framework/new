@@ -1,45 +1,72 @@
 package main
 
 import (
+	"flag"
+	"fmt"
 	"net/http"
+	"os"
 
 	"git.sr.ht/~kyoto-framework/kyoto"
 	"git.sr.ht/~kyoto-framework/zen"
+	"github.com/gorilla/handlers"
+	"github.com/gorilla/mux"
 )
 
+// setupMiddlewares installs common project middlewares into provided mux.
+func setupMiddlewares(mux *mux.Router) {
+	mux.Use(func(handler http.Handler) http.Handler {
+		return handlers.LoggingHandler(os.Stdout, handler)
+	})
+}
+
 // setupStatic registers a static files handler.
-func setupStatic() {
-	http.Handle("/static/", http.StripPrefix("/static/", http.FileServer(http.Dir("./dist"))))
+func setupStatic(mux *mux.Router) {
+	mux.PathPrefix("/static/").Handler(
+		http.StripPrefix("/static/", http.FileServer(http.Dir("./dist"))),
+	)
 }
 
 // setupKyoto provides advanced configuration for kyoto.
-func setupKyoto() {
+func setupKyoto(mux *mux.Router) {
 	kyoto.TemplateConf.FuncMap = kyoto.ComposeFuncMap(
-		kyoto.FuncMap,
-		zen.FuncMap,
+		kyoto.FuncMap, zen.FuncMap,
 	)
 }
 
 // setupPages registers project pages.
-func setupPages() {
-	// We are using kyoto.HandlePage as a simple way to register our pages.
-	kyoto.HandlePage("/", PIndex)
-	// Also, you can use kyoto.HandlerPage to create a raw http.HandlerFunc.
-	// It might be useful for cases when you need to integrate
-	// handler with another functions, like middlewares.
+func setupPages(mux *mux.Router) {
+	// We are using custom pages register function here.
+	// Check Page description for details.
+	Page(mux, "/", PIndex)
 }
 
 // setupActions registers actions for dynamic components.
-func setupActions() {
-	kyoto.HandleAction(CExample(nil))
+func setupActions(mux *mux.Router) {
+	// We are using custom actions register function here.
+	// Check Action description for details.
+	Action(mux, CExample(nil))
 }
 
 // main is a project entry point.
 func main() {
-	setupStatic()
-	setupKyoto()
-	setupPages()
-	setupActions()
+	// Parse arguments
+	addr := flag.String("http", ":8000", "Serving address")
+	flag.Parse()
+	
+	// Initialize mux
+	mux := mux.NewRouter()
 
-	kyoto.Serve(":8000")
+	// Setup parts into mux
+	setupMiddlewares(mux)
+	setupStatic(mux)
+	setupKyoto(mux)
+	setupPages(mux)
+	setupActions(mux)
+
+	// Handle mux into root
+	http.Handle("/", mux)
+
+	// Serve
+	os.Stdout.WriteString(fmt.Sprintf("Serving on :%s\n", *addr))
+	http.ListenAndServe(*addr, mux)
 }
