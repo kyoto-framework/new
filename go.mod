@@ -3,8 +3,8 @@ module start.local
 go 1.19
 
 require (
-	git.sr.ht/~kyoto-framework/kyoto v1.1.0
-	git.sr.ht/~kyoto-framework/zen v1.0.0
+	git.sr.ht/~kyoto-framework/kyoto v1.1.1
+	git.sr.ht/~kyoto-framework/zen v1.0.5
 	github.com/gorilla/handlers v1.5.1
 	github.com/gorilla/mux v1.8.0
 )

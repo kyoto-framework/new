@@ -1,7 +1,9 @@
 git.sr.ht/~kyoto-framework/kyoto v1.1.0 h1:fY1L8LsfCAxkLD7hfgtZt469TgBl9DcBtL11Qmk5cgc=
 git.sr.ht/~kyoto-framework/kyoto v1.1.0/go.mod h1:u4gnssIO3cOoQzFDm1clr38ojySaKGT+FFt4CMksbEo=
-git.sr.ht/~kyoto-framework/zen v1.0.0 h1:e4551VbeggOosc5gtau8wvmLldk2maaoPdl8GpASbEw=
-git.sr.ht/~kyoto-framework/zen v1.0.0/go.mod h1:0pzRG06CbkgMrrAa3+UnY8/aJCej9IC8j23ly9E25nk=
+git.sr.ht/~kyoto-framework/kyoto v1.1.1 h1:EFFiyA1aJF9KcRdeUydqyvhn1snd1H8aOrD26qcbZWw=
+git.sr.ht/~kyoto-framework/kyoto v1.1.1/go.mod h1:u4gnssIO3cOoQzFDm1clr38ojySaKGT+FFt4CMksbEo=
+git.sr.ht/~kyoto-framework/zen v1.0.5 h1:DMbc7DLMCmv2bu9K6BVkiIz+nTYiNBlqMHN5fNqC2/8=
+git.sr.ht/~kyoto-framework/zen v1.0.5/go.mod h1:0pzRG06CbkgMrrAa3+UnY8/aJCej9IC8j23ly9E25nk=
 github.com/felixge/httpsnoop v1.0.1 h1:lvB5Jl89CsZtGIWuTcDM1E/vkVs49/Ml7JJe07l8SPQ=
 github.com/felixge/httpsnoop v1.0.1/go.mod h1:m8KPJKqk1gH5J9DgRY2ASl2lWCfGKXixSwevea8zH2U=
 github.com/gorilla/handlers v1.5.1 h1:9lRY6j8DEeeBT10CvO9hGW0gmky0BprnvDI5vfhUHH4=
