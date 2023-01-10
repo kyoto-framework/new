@@ -1,8 +1,8 @@
 package main
 
 import (
-	"git.sr.ht/~kyoto-framework/kyoto"
-	"git.sr.ht/~kyoto-framework/zen"
+	"github.com/kyoto-framework/kyoto/v2"
+	"github.com/kyoto-framework/zen/v2"
 )
 
 // CExampleArgs is an arguments holder of CExample.
@@ -29,7 +29,7 @@ func CExample(args *CExampleArgs) kyoto.Component[CExampleState] {
 		// Example data fetching
 		data := map[string]string{}
 		zen.Request("GET", "https://httpbin.org/uuid").
-			Do().Success().Decode(&data).Must()
+			Do().Success().Unmarshal(&data).Must()
 		// Set state from data
 		state.UUID = data["uuid"]
 		// Return

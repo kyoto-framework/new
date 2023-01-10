@@ -6,10 +6,10 @@ import (
 	"net/http"
 	"os"
 
-	"git.sr.ht/~kyoto-framework/kyoto"
-	"git.sr.ht/~kyoto-framework/zen"
 	"github.com/gorilla/handlers"
 	"github.com/gorilla/mux"
+	"github.com/kyoto-framework/kyoto/v2"
+	"github.com/kyoto-framework/zen/v2"
 )
 
 // setupMiddlewares installs common project middlewares into provided mux.
@@ -19,10 +19,10 @@ func setupMiddlewares(mux *mux.Router) {
 	})
 }
 
-// setupStatic registers a static files handler.
-func setupStatic(mux *mux.Router) {
-	mux.PathPrefix("/static/").Handler(
-		http.StripPrefix("/static/", http.FileServer(http.Dir("./dist"))),
+// setupAssets registers a static files handler.
+func setupAssets(mux *mux.Router) {
+	mux.PathPrefix("/assets/").Handler(
+		http.StripPrefix("/assets/", http.FileServer(http.Dir("./dist"))),
 	)
 }
 
@@ -52,13 +52,13 @@ func main() {
 	// Parse arguments
 	addr := flag.String("http", ":8000", "Serving address")
 	flag.Parse()
-	
+
 	// Initialize mux
 	mux := mux.NewRouter()
 
 	// Setup parts into mux
 	setupMiddlewares(mux)
-	setupStatic(mux)
+	setupAssets(mux)
 	setupKyoto(mux)
 	setupPages(mux)
 	setupActions(mux)
