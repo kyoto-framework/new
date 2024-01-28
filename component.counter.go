@@ -5,12 +5,14 @@ import (
 	"go.kyoto.codes/v3/rendering"
 )
 
-type IndexPageState struct {
+type CounterComponentState struct {
 	component.Disposable
 	rendering.Template
+
+	Count int
 }
 
-func IndexPage(ctx *component.Context) component.State {
-	state := &IndexPageState{}
+func CounterComponent(ctx *component.Context) component.State {
+	state := &CounterComponentState{}
 	return state
 }
